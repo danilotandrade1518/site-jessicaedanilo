@@ -1,0 +1,30 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+#mainFooter {
+  transform: translateZ(0);
+
+  .footer-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+
+    .title {
+      @include script-font;
+      font-size: 1.3rem;
+    }
+
+    .message {
+      @include serif-font;
+
+      .heart {
+        color: $dark;
+        font-size: 1.6rem;
+      }
+    }
+  }
+  min-height: 10vh;
+  background-color: $light;
+}

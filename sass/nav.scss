@@ -1,0 +1,127 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+@media(max-width: 991px){
+  #navbarResponsive {
+    background-color: $dark;
+  }
+  #mainNav {
+    background-color: $dark;
+
+    .navbar-brand {
+      color: white !important;
+    }
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          color: white !important;
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}
+
+// Styling for the navbar
+#mainNav {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  letter-spacing: 5px;
+
+  .navbar-toggler {
+    font-size: 12px;
+    right: 0;
+    padding: 13px;
+    text-transform: uppercase;
+    color: white;
+    border: 0;
+    background-color: $primary;
+    @include heading-font;
+  }
+  .navbar-brand {
+    font-weight: 600;
+    color: $dark;
+    @include script-font;
+    &.active,
+    &:active,
+    &:focus,
+    &:hover {
+      color: lighten($dark, 17%);
+    }
+  }
+  .navbar-nav {
+    .nav-item {
+      .nav-link {
+        font-weight: 400;
+        padding: 0.75em 0;
+        letter-spacing: 1px;
+        color: $dark;
+        @include serif-font;
+        &.active,
+        &:hover {
+          color: lighten($dark, 17%);
+        }
+      }
+    }
+  }
+}
+@media(min-width:992px) {
+  #mainNav {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
+    -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
+    transition: padding-top 0.3s, padding-bottom 0.3s;
+    border: none;
+    background-color: transparent;
+    .navbar-brand {
+      font-size: 2.25em;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      transition: all 0.3s;
+    }
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          padding: 1.1em 1em !important;
+          font-size: 1.2em;
+        }
+      }
+    }
+    &.navbar-shrink {
+      padding-top: 0;
+      padding-bottom: 0;
+      background-color: $dark;
+
+      .navbar-brand {
+        font-weight: 900;
+        font-size: 2em;
+        color: white;
+        &.active,
+        &:active,
+        &:focus,
+        &:hover {
+          color: darken(white, 17%);
+        }
+      }
+
+      .navbar-nav {
+        .nav-item {
+          .nav-link {
+            font-size: 1.1em;
+            color: white;
+
+            &.active,
+            &:hover {
+              color: darken(white, 17%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
