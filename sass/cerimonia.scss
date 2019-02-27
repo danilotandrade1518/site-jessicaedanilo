@@ -1,0 +1,14 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+#cerimonia {
+  .data {
+    display: block;
+    text-align: center;
+  }
+
+  .endereco {
+    display: block;
+    text-align: center;
+  }
+}

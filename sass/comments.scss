@@ -1,0 +1,36 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+.hide {
+  display: none !important;
+}
+
+#comments {
+  .comment {
+    margin-bottom: 50px;
+
+    .nome {
+      @include serif-font;
+      margin-bottom: 0 !important;
+    }
+    .data {
+      display:block;
+      @include serif-font;
+      margin-bottom: 5px;
+      font-size: .8rem;
+    }
+
+    .message {
+      @include body-font;
+      white-space: pre-line;
+    }
+  }
+}
+.pagination{
+  li {
+    a {
+      border-radius: 50% !important;
+      margin: 0 5px;
+    }
+  }
+}

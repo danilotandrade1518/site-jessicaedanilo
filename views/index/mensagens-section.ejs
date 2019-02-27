@@ -1,0 +1,34 @@
+<section id="mensagensSection" class="white-section">
+  <div class="container">
+    <h1>Deixe sua mensagem para nós</h1>
+
+    <div class="row justify-content-center">
+      <div class="col-md-8 mt-5 bg-light rounded">
+        <h5 class="text-center text-primary">
+          Muito obrigado!
+        </h5>
+        <form action="/" method="post" id="form-box" class="p-2">
+          <div class="form-group input-group">
+            <input type="text" name="author" class="form-control" placeholder="Informe o seu nome" required>
+          </div>
+          <div class="form-group input-group">
+            <input type="email" name="email" class="form-control" placeholder="Informe o seu email" required>
+          </div>
+          <div class="custom-file form-group">
+            <input type="file" class="custom-file-input" id="customFile">
+            <label class="custom-file-label" for="customFile" data-browse="Escolher">Escolha sua foto</label>
+          </div>
+          <div class="form-group input-group">
+            <textarea name="mensagem" id="mensagem" class="form-control" placeholder="Escreva sua mensagem" cols="30" rows="6" required></textarea>
+          </div>
+          <div class="form-group">
+            <input type="submit" class="btn btn-primary btn-block" value="Enviar">
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Comments -->
+    <% include ./comments %>
+  </div>
+</section>

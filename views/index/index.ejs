@@ -4,6 +4,9 @@
 
   <% include ../defaults/head %>
   <link rel="stylesheet" href="/stylesheets/index.css">
+  <link rel="stylesheet" href="/stylesheets/comments.css">
+  <link rel="stylesheet" href="/stylesheets/cerimonia.css">
+  <link rel="stylesheet" href="/stylesheets/noivos.css">
 
   <body>
     <!-- Navigation -->
@@ -12,76 +15,22 @@
     <header>
     </header>
 
-    <!-- Page Content -->
-    <section class="white-section">
-      <div class="container">
-        <h1>Full Page Image Slider</h1>
-        <p class="lead">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eu risus non nibh dignissim congue dapibus quis massa. Donec auctor orci enim, a feugiat urna interdum iaculis. Etiam vel tempor ex. Donec id ipsum sit amet mi ornare feugiat. Morbi imperdiet cursus urna a bibendum. Vivamus mollis magna a semper mattis. Nullam at magna quis dolor dictum finibus a eu libero. Cras eu risus ligula. Aenean vel sodales turpis, ac rutrum arcu.
-          Aenean posuere velit vel accumsan rhoncus. Aliquam auctor quam eu commodo mattis. Sed lacinia commodo turpis, nec dictum nulla gravida vel. Vivamus nec hendrerit velit, sit amet efficitur lectus. Donec id malesuada risus. Quisque ac dignissim libero, at tincidunt nunc. In finibus est at nulla iaculis, sed gravida dolor efficitur.
-        </p>
-      </div>
-    </section>
+    <!-- Welcome section -->
+    <% include ./welcome-section %>
 
-    <section class="blue-section">
-      <div class="container">
-        <div class="center-items">
-          <img class="img-fluid" src="images/noivinhos.png">
-        </div>
+    <!-- Noivos section -->
+    <% include ./noivos-section %>
 
-        <div class="row">
-          <div class="col-md-6 col-sm-12">
-            <h1>Quem é ela?</h1>
-            <p class="lead">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-          </div>
+    <!-- Mensagens section -->
+    <% include ./mensagens-section %>
 
-          <div class="col-md-6 col-sm-12">
-            <h1>Quem é ele?</h1>
-            <p class="lead">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="white-section">
-      <div class="container">
-        <h1>Deixe sua mensagem para nós</h1>
-
-        <div class="row justify-content-center">
-          <div class="col-md-8 mt-5 bg-light rounded">
-            <h5 class="text-center text-success"></h5>
-            <form action="" method="post" id="form-box" class="p-2">
-              <div class="form-group input-group">
-                <input type="text" name="name" class="form-control" placeholder="Informe o seu nome" required>
-              </div>
-              <div class="form-group input-group">
-                <input type="email" name="email" class="form-control" placeholder="Informe o seu email" required>
-              </div>
-              <div class="form-group input-group">
-                <textarea name="msg" id="msg" class="form-control" placeholder="Escreva sua mensagem" cols="30" rows="6" required></textarea>
-              </div>
-              <div class="form-group">
-                <input type="submit" name="submit" id="submit" class="btn btn-primary btn-block" value="Enviar">
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Cerimonia section -->
+    <% include ./cerimonia-section %>
 
     <% include ../defaults/footer %>
   </body>
 
   <% include ../defaults/scripts %>
   <script src="./javascripts/menu.js"></script>
+  <script src="./javascripts/comments-pagination.js"></script>
 </html>
