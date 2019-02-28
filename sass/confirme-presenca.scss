@@ -1,0 +1,15 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+#confirmePresencaMain {
+  padding: 10px;
+  margin-top: 70px;
+  background: $light;
+  min-height: 60vh;
+}
+
+@media(min-width: 992px) {
+  #confirmePresencaMain {
+    margin-top: 50px;
+  }
+}

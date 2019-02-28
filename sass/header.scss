@@ -1,0 +1,47 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+$header-height : 50px;
+$header-image : "/images/header.jpeg";
+
+html, body {
+  width: 100%;
+}
+
+header {
+  background: url($header-image);
+  background-size: cover;
+  background-position: right bottom;
+  position: relative;
+  vertical-align: top;
+}
+@media(max-width: 375px) {
+  header {
+    height: 280px;
+  }
+}
+@media(min-width: 376px) and (max-width: 540px) {
+  header {
+    height: 320px;
+  }
+}
+@media(min-width: 541px) and (max-width: 768px) {
+  header {
+    height: 450px;
+  }
+}
+@media(min-width: 769px) and (max-width: 925px) {
+  header {
+    height: 540px;
+  }
+}
+@media(min-width: 926px) and (max-width: 1010px) {
+  header {
+    height: 590px;
+  }
+}
+@media(min-width: 1011px) {
+  header {
+    height: 725px;
+  }
+}

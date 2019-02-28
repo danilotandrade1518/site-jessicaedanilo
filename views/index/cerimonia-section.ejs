@@ -3,6 +3,9 @@
     <div class="row">
       <div class="col-md-12 col-lg-6">
         <h1>A Cerimônia</h1>
+        <p class="igreja lead">
+          IGREJA SÃO PEDRO
+        </p>
         <p class="data lead">
           SÁBADO, 19 DE OUTUBRO DE 2019, ÀS 20:15
         </p>
@@ -13,9 +16,29 @@
           Jardim Arizona - Sete Lagoas - MG
         </span>
       </div>
-      <div class="col-md-12 col-lg-6">
-        Variable width content
+
+      <div id="mapMain" class="col-md-12 col-lg-6">
+        <div id="mapid"></div>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  var mymap = L.map('mapid').setView([-19.458524, -44.260819], 17);
+
+  L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZGFuaWxvdGFuZHJhZGUiLCJhIjoiY2pzbzFwM3R3MDAxMjQzcWt3NmE3OXF2ayJ9.3AFMRaNGUo2nEKYXsKR8ww', {
+    maxZoom: 20,
+    id: 'mapbox.streets',
+    accessToken: 'pk.eyJ1IjoiZGFuaWxvdGFuZHJhZGUiLCJhIjoiY2pzbzFwM3R3MDAxMjQzcWt3NmE3OXF2ayJ9.3AFMRaNGUo2nEKYXsKR8ww'
+  }).addTo(mymap);
+
+  var igrejaIcon = L.icon({
+    iconUrl: 'images/igreja-icon.png',
+    iconSize:     [42, 42],
+    popupAnchor:  [0, -15]
+  });
+
+  var marker = L.marker([-19.458524, -44.260819], {icon: igrejaIcon}).addTo(mymap);
+  marker.bindPopup("<b>Igreja São Pedro!</b>").openPopup();
+</script>

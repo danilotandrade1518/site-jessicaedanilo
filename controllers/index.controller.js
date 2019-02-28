@@ -28,7 +28,7 @@ router.get('/mensagens', async (req, res, next) => {
         all_pages: paginate.getArrayPages(req)(3, pageCount, req.query.page),
       },
       mensagens
-      });
+    });
 
   } catch (err) {
     next(err);
@@ -46,7 +46,7 @@ router.post('/', async (req, res, next) => {
     return next( error )
   }
 
-  res.render('index/index')
+  res.status(201).json(mensagem)
 })
 
 module.exports = router
