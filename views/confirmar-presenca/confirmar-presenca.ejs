@@ -4,14 +4,48 @@
 
   <% include ../defaults/head %>
   <link rel="stylesheet" href="/stylesheets/confirme-presenca.css">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
   <body>
     <!-- Navigation -->
     <% include ../defaults/nav %>
 
     <div id="confirmePresencaMain">
-      <h1>Confirme sua presença</h1>
+      <div class="container">
+        <h1>Confirme sua presença</h1>
+        <div class="row main-row">
+          <div class="col-md-8 bg-light rounded form-wrapper">
+            <h5 id="mensagemSucesso" class="text-center text-primary" style="display: none">
+              Muito obrigado pela Confirmação!
+              <br>
+              Enviamos uma mensagem pra você em seu email ;)
+            </h5>
+            <h5 id="mensagemErro" class="text-center text-danger" style="display: none">
+              Ocorreu um erro ao enviar a mensagem, por favor tente novamente!
+            </h5>
+            <form id="formConfirmarPresenca" class="p-2">
+              <div class="form-group input-group">
+                <input type="text" name="nome_convite" class="form-control" placeholder="Nome igual no convite" required>
+              </div>
+              <div class="form-group input-group">
+                <input type="text" name="nomes_acompanhantes" class="form-control" placeholder="Nomes dos acompanhantes" required>
+              </div>
+              <div class="form-group input-group">
+                <input type="email" name="email" class="form-control" placeholder="Informe o seu email" required>
+              </div>
+              <div class="form-group input-group">
+                <input type="text" name="telefone" class="form-control" placeholder="Informe o seu telefone" required>
+              </div>
 
+              <div class="g-recaptcha" data-callback="enableSubmitButton" data-sitekey="<%= googleRecaptchaSitekey %>"></div>
+
+              <div class="form-group">
+                <input type="submit" class="btn btn-primary btn-block" value="Enviar">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
       <% include ../defaults/loading %>
     </div>
 
@@ -19,6 +53,8 @@
   </body>
 
   <% include ../defaults/scripts %>
+  <script src="/javascripts/recaptcha-callback.js"></script>
+  <script src="/javascripts/post-confirmar-presenca.js"></script>
   <script>
     setFixedNav(true)
   </script>

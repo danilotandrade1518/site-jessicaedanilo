@@ -20,6 +20,8 @@ $('#formComment').submit(function (e) {
         $("#mensagemSucesso").show()
         $("#mensagemErro").hide()
 
+        $(this).trigger("reset");
+
         stopLoading()
 
         resetaMensagens()

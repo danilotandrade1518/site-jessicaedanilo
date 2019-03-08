@@ -1,24 +1,28 @@
 {
   "name": "jessicaedanilo",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www --trace-sync-io"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
     "bootstrap": "^4.3.1",
+    "compression": "^1.7.3",
     "cookie-parser": "~1.4.3",
+    "dateformat": "^3.0.3",
     "debug": "~2.6.9",
     "ejs": "~2.5.7",
     "express": "~4.16.0",
     "express-paginate": "^1.0.0",
+    "helmet": "^3.15.1",
     "http-errors": "~1.6.2",
     "image-size": "^0.7.2",
     "leaflet": "^1.4.0",
     "mongoose": "^5.4.15",
     "morgan": "~1.9.0",
     "node-sass-middleware": "^0.11.0",
+    "nodemailer": "^5.1.1",
     "photoswipe": "^4.1.3",
     "popper.js": "^1.14.7"
   }

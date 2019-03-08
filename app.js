@@ -1,3 +1,4 @@
+const compression = require('compression')
 const createError = require('http-errors')
 const express = require('express')
 const path = require('path')
@@ -5,11 +6,12 @@ const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 const sassMiddleware = require('node-sass-middleware')
 const paginate = require('express-paginate')
-var bodyParser = require('body-parser')
+const bodyParser = require('body-parser')
+const helmet = require('helmet')
 
-const connect = require('./schemas/db/db.connect')
+const connect = require('./app/schemas/db/db.connect')
 
-const routes = require('./routes/routes')
+const routes = require('./app/routes/routes')
 
 const app = express()
 
@@ -40,6 +42,10 @@ app.use(express.static(__dirname + '/node_modules/popper.js/dist'))
 app.use(express.static(__dirname + '/node_modules/bootstrap/dist'))
 app.use(express.static(__dirname + '/node_modules/leaflet/dist'))
 app.use(express.static(__dirname + '/node_modules/photoswipe/dist'))
+
+app.use(helmet())
+app.disable('x-powered-by')
+app.use(compression())
 
 app.use('/', routes)
 

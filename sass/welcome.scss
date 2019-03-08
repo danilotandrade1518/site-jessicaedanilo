@@ -1,0 +1,29 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+h1, p {
+  text-align: center;
+}
+
+.carousel {
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.slide-box {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 767.98px) {
+  .slide-box img.image2 {
+    display: none;
+  }
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: .5rem;
+}

@@ -11,6 +11,10 @@ h1 {
   padding: 10px 20px;
 }
 
+h2, h3, h4, h5 {
+  @include body-font;
+}
+
 p {
   @include body-font;
   font-size: 18px;

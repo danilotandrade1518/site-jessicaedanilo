@@ -7,7 +7,7 @@
         <h5 id="mensagemSucesso" class="text-center text-primary" style="display: none">
           Muito obrigado pela mensagem!
         </h5>
-        <h5 id="mensagemErro" class="text-center text-error" style="display: none">
+        <h5 id="mensagemErro" class="text-center text-danger" style="display: none">
           Ocorreu um erro ao enviar a mensagem, por favor tente novamente!
         </h5>
         <form id="formComment" class="p-2">
@@ -17,13 +17,12 @@
           <div class="form-group input-group">
             <input type="email" name="email" class="form-control" placeholder="Informe o seu email" required>
           </div>
-          <div class="custom-file form-group">
-            <input type="file" class="custom-file-input" id="customFile">
-            <label class="custom-file-label" for="customFile" data-browse="Escolher">Escolha sua foto</label>
-          </div>
           <div class="form-group input-group">
             <textarea name="mensagem" id="mensagem" class="form-control" placeholder="Escreva sua mensagem" cols="30" rows="6" required></textarea>
           </div>
+
+          <div class="g-recaptcha" data-callback="enableSubmitButton" data-sitekey="<%= googleRecaptchaSitekey %>"></div>
+
           <div class="form-group">
             <input type="submit" class="btn btn-primary btn-block" value="Enviar">
           </div>

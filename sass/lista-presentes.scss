@@ -1,0 +1,34 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+#listaPresentesMain {
+  padding: 20px;
+  background: $light;
+  margin-top: 70px;
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  h1, p, a {
+    text-align: center;
+  }
+
+  a {
+    @include serif-font;
+    display: block;
+    margin-top: 50px;
+    font-size: 1.7rem;
+  }
+}
+
+body {
+  position: relative;
+}
+
+@media(min-width: 992px) {
+  #listaPresentesMain {
+    margin-top: 50px;
+  }
+}

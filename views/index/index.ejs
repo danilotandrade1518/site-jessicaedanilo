@@ -8,9 +8,12 @@
   <link rel="stylesheet" href="/stylesheets/comments.css">
   <link rel="stylesheet" href="/stylesheets/cerimonia.css">
   <link rel="stylesheet" href="/stylesheets/noivos.css">
+  <link rel="stylesheet" href="/stylesheets/welcome.css">
 
   <link rel="stylesheet" href="/leaflet.css" />
   <script src="/leaflet.js"></script>
+
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
   <body>
     <!-- Navigation -->
@@ -35,6 +38,7 @@
   </body>
 
   <% include ../defaults/scripts %>
+  <script src="/javascripts/recaptcha-callback.js"></script>
   <script src="/javascripts/comments-pagination.js"></script>
   <script src="/javascripts/post-comment.js"></script>
 </html>

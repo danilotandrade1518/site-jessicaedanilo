@@ -7,19 +7,22 @@
   margin-top: 70px;
   background: $light;
 
+  h1, p {
+    text-align: center;
+  }
+
   .my-gallery {
+    display: flex;
     width: 100%;
-    float: left;
+    flex-wrap: wrap;
 
     img {
       width: 100%;
       height: auto;
     }
     figure {
-      display: block;
-      float: left;
+      flex: 1 0 17%;
       margin: 0 5px 5px 0;
-      width: 150px;
     }
     figcaption {
       display: none;
