@@ -11,7 +11,7 @@ module.exports = function(env) {
         if(env === 'test') {
             db = mongoose.connect('mongodb://127.0.0.1:27017/jessicaedanilo_test', options)
         } else {
-            db = mongoose.connect('mongodb://127.0.0.1:27017/jessicaedanilo', options)
+            db = mongoose.connect('mongodb://jessicaedanilo:d93937161@kamino.mongodb.umbler.com:50874/jessicaedanilo', options)
         }
     }
 
