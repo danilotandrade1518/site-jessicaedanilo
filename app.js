@@ -1,5 +1,4 @@
 const compression = require('compression')
-const createError = require('http-errors')
 const express = require('express')
 const path = require('path')
 const cookieParser = require('cookie-parser')
@@ -18,12 +17,11 @@ const app = express()
 // connect DB
 connect(app.get('env'))
 
-app.use(paginate.middleware(10, 50));
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
+app.use(paginate.middleware(10, 50))
 app.use(logger('dev'))
 app.use(express.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -47,18 +45,30 @@ app.use(helmet())
 app.disable('x-powered-by')
 app.use(compression())
 
+app.get('*', (req, res, next) => {
+  if (req.app.get('env')==='production' && req.headers['x-forwarded-proto'] != 'https') {
+    res.redirect("https://" + req.headers.host + req.url)
+  } else {
+    next()
+  }
+})
+
 app.use('/', routes)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404))
+  res.redirect('/')
 })
 
 // error handler
 app.use(function(err, req, res, next) {
+  if (req.app.get('env')==='production') {
+    res.redirect('/')
+  }
+
   // set locals, only providing error in development
   res.locals.message = err.message
-  res.locals.error = req.app.get('env') === 'development' ? err : {}
+  res.locals.error = err
 
   // render the error page
   res.status(err.status || 500)

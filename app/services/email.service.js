@@ -2,17 +2,18 @@ const nodemailer = require('nodemailer')
 const dateFormat = require('dateformat')
 const fs = require('fs')
 const ejs = require("ejs")
+const env = require('../env/env')
 
 function getTransporter() {
   return nodemailer.createTransport({
-    host: "smtp.live.com",
-    port: 587,
-    secureConnection: false,
+    host: env.EMAIL_HOST,
+    port: env.EMAIL_PORT,
+    secureConnection: env.EMAIL_SECURE_CONNECTION,
     auth: {
-      user: "jessica-e-danilo@hotmail.com",
-      pass: "d93937161"
+      user: env.EMAIL_USER,
+      pass: env.EMAIL_PASS
     },
-    requireTLS: true,
+    requireTLS: env.EMAIL_REQUIRETLS,
   })
 }
 

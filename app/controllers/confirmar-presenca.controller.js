@@ -3,13 +3,11 @@ const router = express.Router()
 
 const confirmarPresencaService = require('../services/confirmar-presenca.service')
 const emailService = require('../services/email.service')
-
-const env = process.env.NODE_ENV || 'dev';
-const googleRecaptchaSitekey = env==='production' ? '6Lf2JpYUAAAAALbBvheNd00S3mdzSlwILTBnnm9o' : '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI';
+const env = require('../env/env')
 
 router.get('/', (req, res, next) => {
   res.render('confirmar-presenca/confirmar-presenca', {
-    googleRecaptchaSitekey
+    googleRecaptchaSitekey: env.GOOGLE_RECAPTCHA_SITEKEY
   })
 })
 
