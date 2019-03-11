@@ -40,3 +40,4 @@ testem.log
 Thumbs.db
 
 .snyk
+email.js
