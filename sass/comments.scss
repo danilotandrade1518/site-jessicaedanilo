@@ -23,6 +23,8 @@
     .message {
       @include body-font;
       white-space: pre-line;
+      word-break: break-word;
+      word-wrap: anywhere;
     }
   }
 }
